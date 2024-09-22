@@ -1,14 +1,13 @@
 package com.mycompany.dvdstore.controller;
 
 import com.mycompany.dvdstore.entity.Movie;
-import com.mycompany.dvdstore.repository.GoLiveMovieRepository;
-import com.mycompany.dvdstore.service.MovieService;
+import com.mycompany.dvdstore.service.MovieServiceInterface;
 
 import java.util.Scanner;
 
 public class MovieController {
 
-    private GoLiveMovieRepository movieService = new GoLiveMovieRepository();
+    private MovieServiceInterface movieService;
 
     public void addUsingConsole() {
 
@@ -22,6 +21,6 @@ public class MovieController {
         movie.setTitle(title);
         movie.setGenre(genre);
 
-        movieService.add(movie);
+        movieService.registerMovie(movie);
     }
 }
